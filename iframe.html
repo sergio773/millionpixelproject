@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <style>
+      .button {
+        background-color: #155DE9;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        font-family: 'Arial';
+      }
+      .label {
+        font-family: 'Arial';
+      }
+      .input {
+        font-size: 14px;
+      }
+    </style>
+    
+    <script type="text/javascript">
+      // when a message is received from the page code
+      window.onmessage = (event) => {
+        if (event.data) {
+          document.getElementById("theLabel").innerHTML = event.data;
+        }
+      };
+
+      // send message to the page code
+      function button_click() {
+        window.parent.postMessage(document.getElementById("theMessage").value, "*");
+      }
+    </script>
+  </head>
+  
+  <body>
+    <span id="theLabel" class="label">HTML Label</span>
+    <br/><br/>
+    <button class="button" onclick="button_click()">< Send Message</button>
+    <br/><br/>
+    <input type="text" class="input" id="theMessage">
+  </body>
+</html>

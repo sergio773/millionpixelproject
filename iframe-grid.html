@@ -1,0 +1,220 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .button {
+            background-color: #155DE9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-family: 'Arial';
+        }
+
+        .label {
+            font-family: 'Arial';
+        }
+
+        .input {
+            font-size: 14px;
+        }
+
+        .grid-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: #F7F5F5;
+        }
+
+        .empty-square {
+            background-color: #F7F5F5;
+            border-right: 2px solid #CCCCCC;
+            border-bottom: 2px solid #CCCCCC;
+            position: absolute;
+        }
+
+        /*spinner css*/
+        .lds-roller {
+            display: inline-block;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: 9999;
+            margin-left: 460px;
+            margin-top: 460px;
+        }
+
+        .lds-roller div {
+            animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            transform-origin: 40px 40px;
+        }
+
+        .lds-roller div:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #fff;
+            margin: -4px 0 0 -4px;
+        }
+
+        .lds-roller div:nth-child(1) {
+            animation-delay: -0.036s;
+        }
+
+        .lds-roller div:nth-child(1):after {
+            top: 63px;
+            left: 63px;
+        }
+
+        .lds-roller div:nth-child(2) {
+            animation-delay: -0.072s;
+        }
+
+        .lds-roller div:nth-child(2):after {
+            top: 68px;
+            left: 56px;
+        }
+
+        .lds-roller div:nth-child(3) {
+            animation-delay: -0.108s;
+        }
+
+        .lds-roller div:nth-child(3):after {
+            top: 71px;
+            left: 48px;
+        }
+
+        .lds-roller div:nth-child(4) {
+            animation-delay: -0.144s;
+        }
+
+        .lds-roller div:nth-child(4):after {
+            top: 72px;
+            left: 40px;
+        }
+
+        .lds-roller div:nth-child(5) {
+            animation-delay: -0.18s;
+        }
+
+        .lds-roller div:nth-child(5):after {
+            top: 71px;
+            left: 32px;
+        }
+
+        .lds-roller div:nth-child(6) {
+            animation-delay: -0.216s;
+        }
+
+        .lds-roller div:nth-child(6):after {
+            top: 68px;
+            left: 24px;
+        }
+
+        .lds-roller div:nth-child(7) {
+            animation-delay: -0.252s;
+        }
+
+        .lds-roller div:nth-child(7):after {
+            top: 63px;
+            left: 17px;
+        }
+
+        .lds-roller div:nth-child(8) {
+            animation-delay: -0.288s;
+        }
+
+        .lds-roller div:nth-child(8):after {
+            top: 56px;
+            left: 12px;
+        }
+
+        @keyframes lds-roller {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hide-element {
+            display: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+
+    <script type="text/javascript">
+        // when a message is received from the page code
+        window.onmessage = (event) => {
+            if (event.data) {
+                document.getElementById("theLabel").innerHTML = event.data;
+            }
+        };
+
+        // send message to the page code
+        function button_click() {
+            window.parent.postMessage(document.getElementById("theMessage").value, "*");
+        }
+        //add grid elements
+        document.addEventListener('DOMContentLoaded', function (event) {
+            const gridRowSize = 100;
+            const gridColumnSize = 100;
+            let offsetTop = 0;
+            let offsetLeft = 0;
+            let emptySquare = {
+                width: '8',
+                height: '8',
+                imageUrl: '',
+                isEmpty: true
+            };
+            const gridElements = [];//Should get from db
+
+            // this for only to fill 10000 empty squares
+            for (let row = 0; row < 100; row++) {
+                for (let column = 0; column < 100; column++) {
+                    emptySquare.offsetLeft = column * 10;
+                    emptySquare.offsetTop = row * 10;
+                    gridElements.push(_.clone(emptySquare));
+                }
+            }
+
+            const gridContainer = $('.grid-container');
+            gridElements.forEach(element => {
+                if (element.isEmpty) {
+                    $('<div class="empty-square" style="width: ' + element.width + 'px; height: ' + element.height + 'px; top: ' + element.offsetTop + 'px; left: ' + element.offsetLeft + 'px;"><div>').appendTo(gridContainer);
+                } else {
+                    // TODO: create image with link element
+                }
+            });
+            $('.lds-roller').addClass('hide-element');
+        });
+    </script>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

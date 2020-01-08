@@ -11,7 +11,7 @@ function button_click() {
 }
 
 function isFilled(square, imageElements) {
-    imageElements.some(element => {
+    return imageElements.some(element => {
         const offSetLeftLast = element.width + element.offsetLeft;
         const offSetTopLast = element.height + element.offsetTop;
         const isInsideX = square.offsetLeft >= element.offsetLeft && square.offsetLeft < offSetLeftLast;

@@ -33,6 +33,10 @@ body {
     position: absolute;
 }
 
+.image-container {
+    position: absolute;
+}
+
 /*spinner css*/
 .lds-roller {
     display: inline-block;

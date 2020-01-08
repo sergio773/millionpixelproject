@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             offsetTop: 10,
             offsetLeft: 10,
             imageUrl: 'https://dummyimage.com/100x100/red/0011ff&text=customer+image',
+            linkUrl: 'http://google.es',
             isEmpty: false
         }
     ];
@@ -60,7 +61,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
         if (element.isEmpty) {
             $('<div class="empty-square" style="width: ' + element.width + 'px; height: ' + element.height + 'px; top: ' + element.offsetTop + 'px; left: ' + element.offsetLeft + 'px;"><div>').appendTo(gridContainer);
         } else {
-            // TODO: create image with link element
+            const imageElement = '<a href="' + element.linkUrl + '" target="_blank"><img style="" src="' + element.imageUrl + '"></a>'
+            $('<div class="image-container" style="width: ' + element.width + 'px; height: ' + element.height + 'px; top: ' + element.offsetTop + 'px; left: ' + element.offsetLeft + 'px;">' + imageElement + '<div>').appendTo(gridContainer);
         }
     });
     $('.lds-roller').addClass('hide-element');

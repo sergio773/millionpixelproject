@@ -26,18 +26,18 @@ document.addEventListener('DOMContentLoaded', function (event) {
     let offsetTop = 0;
     let offsetLeft = 0;
     let emptySquare = {
-        width: '8',
-        height: '8',
+        width: 8,
+        height: 8,
         imageUrl: '',
         isEmpty: true
     };
     const gridElements = [];//Should get from db
     const imageElements = [
         {
-            width: '100',
-            height: '100',
-            offsetTop: '10',
-            offsetLeft: '10',
+            width: 100,
+            height: 100,
+            offsetTop: 10,
+            offsetLeft: 10,
             imageUrl: 'https://dummyimage.com/100x100/red/0011ff&text=customer+image',
             isEmpty: false
         }

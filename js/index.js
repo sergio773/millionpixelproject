@@ -12,10 +12,10 @@ function button_click() {
 
 function isFilled(square, imageElements) {
     imageElements.some(element => {
-        const offSetLeftLast = element.width - 10 + element.offsetLeft;
-        const offSetTopLast = element.height -10 + element.offsetTop;
-        const isInsideX = square.offsetLeft >= element.offsetLeft && square.offsetLeft <= offSetLeftLast;
-        const isInsideY = square.offsetTop <= element.offsetTop && square.offsetTop >= offSetTopLast;
+        const offSetLeftLast = element.width + element.offsetLeft;
+        const offSetTopLast = element.height + element.offsetTop;
+        const isInsideX = square.offsetLeft >= element.offsetLeft && square.offsetLeft < offSetLeftLast;
+        const isInsideY = square.offsetTop >= element.offsetTop && square.offsetTop < offSetTopLast;
         return isInsideX && isInsideY;
     });
 }

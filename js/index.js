@@ -2,7 +2,7 @@
 window.onmessage = (event) => {
     console.log('message recived ', new Date());
     if (event.data) {
-        //loadGrid(event.data);
+        loadGrid(event.data);
     }
 };
 

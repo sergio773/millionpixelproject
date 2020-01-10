@@ -1,13 +1,14 @@
  // when a message is received from the page code
 window.onmessage = (event) => {
+    console.log('message recived ', newDate());
     if (event.data) {
-        loadGrid(event.data);
+        //loadGrid(event.data);
     }
 };
 
 // send message to the page code
 function button_click() {
-    window.parent.postMessage(document.getElementById("theMessage").value, "*");
+    //window.parent.postMessage(document.getElementById("theMessage").value, "*");
 }
 
 function isFilled(square, imageElements) {

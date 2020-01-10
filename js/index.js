@@ -1,6 +1,6 @@
  // when a message is received from the page code
 window.onmessage = (event) => {
-    console.log('message recived ', newDate());
+    console.log('message recived ', new Date());
     if (event.data) {
         //loadGrid(event.data);
     }

@@ -28,9 +28,18 @@ body {
 
 .empty-square {
     background-color: #F7F5F5;
-    border-right: 2px solid #CCCCCC;
-    border-bottom: 2px solid #CCCCCC;
+    border: 1px solid #CCCCCC;
     position: absolute;
+    transition: background-color 2s ease-in-out;
+    -moz-transition: background-color 2s ease-in-out;
+    -webkit-transition: background-color 2s ease-in-out;
+}
+
+.empty-square:hover {
+    background-color: #8290FE;
+    transition: background-color 0.1s ease-in-out;
+    -moz-transition: background-color 0.1s ease-in-out;
+    -webkit-transition: background-color 0.1s ease-in-out;
 }
 
 .image-container {

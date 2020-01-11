@@ -35,6 +35,10 @@ body {
     -webkit-transition: background-color 2s ease-in-out;
 }
 
+.empty-square.selected {
+    border: 1px solid red;
+}
+
 .empty-square:hover {
     background-color: #8290FE;
     transition: background-color 0.1s ease-in-out;

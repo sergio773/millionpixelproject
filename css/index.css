@@ -36,7 +36,8 @@ body {
 }
 
 .empty-square.selected {
-    border: 1px solid red;
+    border: 1px solid #8290FE;
+    background-color: #8290FE;
 }
 
 .empty-square:hover {

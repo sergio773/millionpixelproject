@@ -27,7 +27,7 @@ $(document).ready(function () {
         }
 
     }).on('move', ({ changed: { removed, added } }) => {
-
+        $('.modal-start').remove();
         // Add a custom class to the elements that where selected.
         for (const el of added) {
             el.classList.add('selected');
@@ -46,7 +46,7 @@ $(document).ready(function () {
 });
 
 function showModalToStart() {
-    const selectedElements = $('.empty-square.selected');
+    const selectedElements = $('.empty-square.selected').toArray();
     if (selectedElements.length > 0) {
         const elementSize = getSelectionSize(selectedElements);
         const elementToPurchase = {
@@ -72,7 +72,7 @@ function getSelectionSize(selectedElements) {
     let lines = 0;
     const originTop = selectedElements[0].style.top;
     const originLeft = selectedElements[0].style.left;
-    selectedElements.array.forEach(element => {
+    selectedElements.forEach(element => {
         if (originLeft === element.style.left) {
             ++lines;
         }

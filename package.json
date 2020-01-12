@@ -1,0 +1,30 @@
+{
+  "name": "millionpixelproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergio773/millionpixelproject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergio773/millionpixelproject/issues"
+  },
+  "homepage": "https://github.com/sergio773/millionpixelproject#readme",
+  "devDependencies": {
+    "html-webpack-inline-source-plugin": "0.0.10",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "css-loader": "^3.4.2",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "path": "^0.12.7"
+  }
+}

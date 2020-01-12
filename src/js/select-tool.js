@@ -46,8 +46,8 @@ $(document).ready(function () {
 });
 
 function showModalToStart() {
-    const modalHeight = 300;
-    const modalWidth = 300;
+    const modalHeight = 320;
+    const modalWidth = 340;
     const modalMargin = 5;
     const selectedElements = $('.empty-square.selected').toArray();
     if (selectedElements.length > 0) {

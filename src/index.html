@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <!-- inline_css_plugin -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/selection-js/dist/selection.min.js"></script>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="modal-start hide-element">
+            <h4>Buy a piece of internet history!</h4>
+            <div class="button-container">
+                <div class="pixel-button" onclick="window.reservePixels()"><span>Reserve this space</span></div>
+            </div>
+            <div class="button-container">
+                <div class="pixel-button"><span>Buy this space</span></div>
+            </div>
+            <div class="button-container">
+                <div class="pixel-button" onclick="window.seeOurCharities()"><span>See our charities</span></div>
+            </div>
+            <p>Half of all pixel purchases go to a charity of your choosing!</p>
+            <a>More information...</a>
+        </div>
+
+        <div class="modal-reserve hide-element">
+            <h4>Reserve selected pixels!</h4>
+            <p>Complete the captcha</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,3 +1,11 @@
+h4 {
+    font-family: 'Press Start 2P', cursive;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+}
+
 .modal-start {
     width: 300px;
     height: 300px;
@@ -10,22 +18,16 @@
     margin-top: 5px;
     margin-bottom: 5px;
     z-index: 99999;
-    padding: 10px;
-}
-
-.modal-start h2 {
-    font-family: 'Press Start 2P', cursive;
-}
-
-.modal-start p {
-    font-family: 'Press Start 2P', cursive;
+    padding: 10px 20px;
 }
 
 .pixel-button span {
     font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
 }
 
 .pixel-button {
+    cursor: pointer;
     justify-content: center;
     text-align: initial;
     display: flex;
@@ -43,13 +45,13 @@
 }
 
 .button-container {
+    margin: 15px 0px;
     height: 32px;
     min-height: 21px;
-    width: 90px;
     position: relative;
 }
 
-.button-container.pixel-button:hover {
+.button-container .pixel-button:hover {
     background-color: rgba(130, 144, 254, 1);
     border: solid rgba(255, 255, 255, 1) 0px;
     bottom: -9px;
@@ -57,4 +59,5 @@
     left: 9px;
     right: -9px;
     top: 9px;
+    color: white;
 }

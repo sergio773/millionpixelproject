@@ -1,13 +1,21 @@
- // when a message is received from the page code
+require('./select-tool');
+require('../css/index.css');
+require('../css/modal.css');
+import { reservePixels } from './reservation'
+// when a message is received from the page code
 window.onmessage = (event) => {
     if (event.data) {
         loadGrid(event.data);
     }
 };
 
-// send message to the page code
-function button_click() {
-    //window.parent.postMessage(document.getElementById("theMessage").value, "*");
+// golbal functions
+global.seeOurCharities = function () {
+    window.parent.postMessage('see-charities', '*');
+}
+
+global.reservePixels = function () {
+    reservePixels();
 }
 
 function isFilled(square, imageElements) {

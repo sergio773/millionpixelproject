@@ -2,6 +2,7 @@
 
 <head>
     <!-- inline_css_plugin -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link href="https://fonts.googleapis.com/css?family=Nunito|Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -22,7 +23,7 @@
             <div></div>
         </div>
 
-        <div class="modal-start hide-element">
+        <div class="mpp-modal modal-start hide-element">
             <h4>Buy a piece of internet history!</h4>
             <div class="button-container">
                 <div class="pixel-button" onclick="window.reservePixels()"><span>Reserve this space</span></div>
@@ -37,9 +38,17 @@
             <a>More information...</a>
         </div>
 
-        <div class="modal-reserve hide-element">
+        <div class="mpp-modal modal-reserve hide-element">
             <h4>Reserve selected pixels!</h4>
             <p>Complete the captcha</p>
+            <div class="g-recaptcha" data-sitekey="6LdLsM4UAAAAAGnvdH8qb-RSOw4wgFbArr4dEZdv"></div>
+            <div class="button-container">
+                <div class="pixel-button" onclick="window.startReservation()"><span>Reserve now!</span></div>
+            </div>
+        </div>
+
+        <div class="timer-reserve hide-element">
+            <span class="time">10:00</span>
         </div>
     </div>
 </body>

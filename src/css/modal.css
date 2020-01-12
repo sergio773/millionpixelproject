@@ -6,7 +6,7 @@ p {
     font-family: 'Nunito', sans-serif;
 }
 
-.modal-start {
+.mpp-modal {
     width: 300px;
     height: 300px;
     background-color: red;

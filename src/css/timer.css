@@ -1,0 +1,13 @@
+.timer-reserve {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 30px;
+}
+
+.time {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
+    color: #BD1515;
+}

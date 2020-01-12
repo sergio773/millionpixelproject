@@ -1,5 +1,7 @@
+import { getSelectionSize } from './utils';
+
+// TODO: close modal button
 $(document).ready(function () {
-    // TODO: draw selection rectangle
     // Initialize selectionjs
     const selection = Selection.create({
 
@@ -28,6 +30,9 @@ $(document).ready(function () {
 
     }).on('move', ({ changed: { removed, added } }) => {
         $('.modal-start').addClass('hide-element');
+        if (!global.reservationEnabled) {
+            $('.modal-reserve').addClass('hide-element');
+        }
         // Add a custom class to the elements that where selected.
         for (const el of added) {
             el.classList.add('selected');
@@ -72,23 +77,4 @@ function showModalToStart() {
         }
         $('.modal-start').css( { left: modalLeft, top: modalTop } ).removeClass('hide-element');
     }
-}
-
-function getSelectionSize(selectedElements) {
-    let columns = 0;
-    let lines = 0;
-    const originTop = selectedElements[0].style.top;
-    const originLeft = selectedElements[0].style.left;
-    selectedElements.forEach(element => {
-        if (originLeft === element.style.left) {
-            ++lines;
-        }
-        if (originTop === element.style.top) {
-            ++columns;
-        }
-    });
-    return {
-        width: columns * 10,
-        height: lines * 10
-    };
 }

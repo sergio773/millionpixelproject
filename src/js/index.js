@@ -1,13 +1,18 @@
 require('./select-tool');
 require('../css/index.css');
 require('../css/modal.css');
-import { reservePixels } from './reservation'
+require('../css/timer.css');
+require('./utils');
+import { reservePixels, startReservation } from './reservation'
 // when a message is received from the page code
 window.onmessage = (event) => {
     if (event.data) {
         loadGrid(event.data);
     }
 };
+
+// global variables
+global.reservationEnabled = false;
 
 // golbal functions
 global.seeOurCharities = function () {
@@ -16,6 +21,10 @@ global.seeOurCharities = function () {
 
 global.reservePixels = function () {
     reservePixels();
+}
+
+global.startReservation = function () {
+    startReservation();
 }
 
 function isFilled(square, imageElements) {

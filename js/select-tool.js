@@ -27,7 +27,7 @@ $(document).ready(function () {
         }
 
     }).on('move', ({ changed: { removed, added } }) => {
-        $('.modal-start').remove();
+        $('.modal-start').addClass('hide-element');
         // Add a custom class to the elements that where selected.
         for (const el of added) {
             el.classList.add('selected');
@@ -48,6 +48,7 @@ $(document).ready(function () {
 function showModalToStart() {
     const modalHeight = 300;
     const modalWidth = 300;
+    const modalMargin = 5;
     const selectedElements = $('.empty-square.selected').toArray();
     if (selectedElements.length > 0) {
         const elementSize = getSelectionSize(selectedElements);
@@ -64,10 +65,10 @@ function showModalToStart() {
         let modalTop = elementToPurchase.height + elementToPurchase.offsetTop;
         let modalLeft = (elementToPurchase.width / 2) + elementToPurchase.offsetLeft;
         if(elementToPurchase.offsetTop > 500) {
-          modalTop = modalTop - elementToPurchase.height - modalHeight
-          if (elementToPurchase.offsetLeft > 500) {
-            modalLeft = modalLeft - modalWidth;
-          }
+          modalTop = modalTop - elementToPurchase.height - modalHeight - (modalMargin * 2);
+        }
+        if (elementToPurchase.offsetLeft > 500) {
+          modalLeft = modalLeft - modalWidth;
         }
         $('.modal-start').css( { left: modalLeft, top: modalTop } ).removeClass('hide-element');
     }

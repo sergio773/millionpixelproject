@@ -46,6 +46,8 @@ $(document).ready(function () {
 });
 
 function showModalToStart() {
+    const modalHeight = 300;
+    const modalWidth = 300;
     const selectedElements = $('.empty-square.selected').toArray();
     if (selectedElements.length > 0) {
         const elementSize = getSelectionSize(selectedElements);
@@ -58,12 +60,16 @@ function showModalToStart() {
             linkUrl: '',
             isEmpty: false
         };
-        // TODO: Show modal depending on where purchase is located to avoid scroll on iframe
-        const modalTop = elementToPurchase.height + elementToPurchase.offsetTop; // This shows modal at bottom of the selection
-        const modalLeft = (elementToPurchase.width / 2) + elementToPurchase.offsetLeft;
-        const gridContainer = $('.grid-container');
-        $('<div class="modal-start" style="width: 300px; height: 300px; top: ' + modalTop + 'px; left: ' + modalLeft + 'px;"><div>').appendTo(gridContainer);
 
+        let modalTop = elementToPurchase.height + elementToPurchase.offsetTop;
+        let modalLeft = (elementToPurchase.width / 2) + elementToPurchase.offsetLeft;
+        if(elementToPurchase.offsetTop > 500) {
+          modalTop = modalTop - elementToPurchase.height - modalHeight
+          if (elementToPurchase.offsetLeft > 500) {
+            modalLeft = modalLeft - modalWidth;
+          }
+        }
+        $('.modal-start').css( { left: modalLeft, top: modalTop } ).removeClass('hide-element');
     }
 }
 

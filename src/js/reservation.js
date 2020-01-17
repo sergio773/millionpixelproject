@@ -46,6 +46,7 @@ export function startReservation() {
             if (startTime === 0) {
                 clearInterval(timerInterval);
                 // TODO: notify to user the time is over, hide timmer and free the squares
+                global.cancelreservation();
                 return;
             }
             --startTime;

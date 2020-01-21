@@ -27,25 +27,26 @@ body {
 }
 
 .empty-square {
-    background-color: #F7F5F5;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRF9/X1s+1L5AAAAAtJREFUeJxjYEAFAAAQAAE5vY9lAAAAAElFTkSuQmCC');
     border: 1px solid #CCCCCC;
     position: absolute;
-    transition: background-color 1s ease-in-out;
-    -moz-transition: background-color 1s ease-in-out;
-    -webkit-transition: background-color 1s ease-in-out;
+    transition: background-image 1s ease;
+    -moz-transition: background-image 1s ease;
+    -webkit-transition: background-image 1s ease;
+}
+
+.empty-square:hover {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRFgpD+bo+nNQAAAAtJREFUeJxjYEAFAAAQAAE5vY9lAAAAAElFTkSuQmCC');
+    transition: background-image 0s ease;
+    -moz-transition: background-image 0s ease;
+    -webkit-transition: background-image 0s ease;
 }
 
 .empty-square.selected {
     border: 1px solid #8290FE;
-    background-color: #8290FE;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRFgpD+bo+nNQAAAAtJREFUeJxjYEAFAAAQAAE5vY9lAAAAAElFTkSuQmCC');
 }
 
-.empty-square:hover {
-    background-color: #8290FE;
-    transition: background-color 0.1s ease-in-out;
-    -moz-transition: background-color 0.1s ease-in-out;
-    -webkit-transition: background-color 0.1s ease-in-out;
-}
 
 .image-container {
     position: absolute;

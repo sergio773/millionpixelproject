@@ -3,6 +3,7 @@ require('../css/index.css');
 require('../css/modal.css');
 require('../css/timer.css');
 require('./utils');
+
 import { reservePixels, startReservation } from './reservation'
 
 // when a message is received from the page code
@@ -20,10 +21,6 @@ window.onmessage = (event) => {
             break;
         default:
             break;
-    }
-
-    if (event.data) {
-        loadGrid(event.data);
     }
 };
 
@@ -48,7 +45,7 @@ global.startReservation = function () {
 global.cancelreservation = function () {
     $('.timer-reserve').addClass('hide-element');
     if (global.reservedElement) {
-        addSquaresOnElement(global.reservedElement,  $('.grid-container'));
+        addSquaresOnElement(global.reservedElement, $('.grid-container'));
         $(`#${global.reservedElement._id}`).remove();
         window.parent.postMessage({ action: 'cancel-reservation', id: global.reservedElement._id }, '*');
     }
@@ -56,7 +53,7 @@ global.cancelreservation = function () {
 }
 
 function isFilled(square, imageElements) {
-    if ( !imageElements || imageElements.length === 0) {
+    if (!imageElements || imageElements.length === 0) {
         return false;
     }
     return imageElements.some(element => {
